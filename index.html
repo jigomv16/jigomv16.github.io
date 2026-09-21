@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jigo Villanueva — Web Developer</title>
+<title>Jigo Villanueva — Web Developer &amp; AI Automation Specialist</title>
+<meta name="description" content="Web developer with 12+ years of WordPress, WooCommerce, and PHP experience who also builds and troubleshoots business automations with GoHighLevel, Make, Zapier, n8n, APIs, and webhooks.">
+<meta property="og:title" content="Jigo Villanueva — Web Developer &amp; AI Automation Specialist">
+<meta property="og:description" content="Websites, business automations, and custom integrations that connect the tools businesses use every day.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jigomv16.github.io/">
+<meta name="theme-color" content="#0E1022">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -88,7 +94,7 @@
   }
   nav.links{
     display:flex;
-    gap:30px;
+    gap:26px;
     font-size:0.9rem;
     color:var(--mute);
   }
@@ -147,6 +153,7 @@
     .btn{transition:all 0.15s ease;}
   }
 
+  @media (max-width:1020px){ .status-pill{display:none;} }
   @media (max-width:760px){ nav.links{display:none;} }
 
   /* ---------- HERO ---------- */
@@ -202,13 +209,36 @@
     background-clip:text;
     -webkit-text-fill-color:transparent;
   }
+  .hero-role{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.35rem, 2.6vw, 1.8rem);
+    letter-spacing:-0.01em;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  .hero-role .amp{color:var(--coral);}
   .hero-sub{
     font-size:1.22rem;
     color:var(--mute);
     max-width:640px;
-    margin-bottom:40px;
+    margin-bottom:22px;
   }
   .hero-sub strong{color:var(--ink); font-weight:600;}
+  .hero-tools{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px 0;
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--mute);
+    margin-bottom:40px;
+    max-width:900px;
+  }
+  .hero-tools span{white-space:nowrap;}
+  .hero-tools span:not(:last-child)::after{content:'|'; margin:0 10px; color:var(--line-strong);}
+  .hero-tools .lead-in{color:var(--ink);}
 
   .stat-strip{
     display:flex;
@@ -343,6 +373,222 @@
   .service-card p{color:var(--mute); font-size:0.94rem;}
   @media (max-width:760px){ .service-grid{grid-template-columns:1fr;} }
 
+  /* ---------- AUTOMATION ---------- */
+  #automation{position:relative; overflow:hidden;}
+  #automation::before{
+    content:'';
+    position:absolute; top:-200px; left:50%;
+    width:700px; height:420px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse, rgba(56,217,201,0.10), transparent 70%);
+    pointer-events:none;
+  }
+  .auto-sub{
+    font-family:var(--display);
+    font-size:1.15rem;
+    font-weight:600;
+    color:#C9BFFF;
+    margin-top:10px;
+  }
+  .auto-intro{
+    display:grid;
+    grid-template-columns:1.25fr 1fr;
+    gap:48px;
+    margin-bottom:44px;
+    align-items:start;
+  }
+  .auto-intro p{color:var(--mute); font-size:1.02rem; margin-bottom:14px;}
+  .auto-intro p strong{color:var(--ink);}
+  .auto-aside{
+    border:1px solid var(--line);
+    border-left:2px solid var(--teal);
+    background:var(--panel);
+    border-radius:12px;
+    padding:20px 22px;
+    font-size:0.93rem;
+    color:var(--mute);
+  }
+  .auto-aside h3{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin-bottom:10px;
+  }
+  .auto-aside ul{list-style:none; display:flex; flex-direction:column; gap:7px;}
+  .auto-aside li{padding-left:16px; position:relative;}
+  .auto-aside li::before{content:'—'; position:absolute; left:0; color:var(--line-strong);}
+  @media (max-width:760px){ .auto-intro{grid-template-columns:1fr; gap:24px;} }
+
+  /* tool chain strip */
+  .chain{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    padding:18px 22px;
+    margin-bottom:28px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:rgba(26,30,61,0.6);
+  }
+  .chain::before{
+    content:'';
+    position:absolute;
+    left:40px; right:40px; top:50%;
+    height:1px;
+    background:linear-gradient(90deg, var(--violet), var(--coral), var(--teal), var(--gold));
+    opacity:0.45;
+  }
+  .chain-node{
+    position:relative;
+    z-index:1;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    padding:7px 12px;
+    border-radius:8px;
+    background:var(--bg-2);
+    border:1px solid var(--line-strong);
+    white-space:nowrap;
+  }
+  .chain-node::before{
+    content:'';
+    display:inline-block;
+    width:6px; height:6px; border-radius:50%;
+    margin-right:8px;
+    vertical-align:1px;
+    background:var(--c, var(--violet));
+  }
+  .chain-pulse{
+    position:absolute;
+    top:50%; left:40px;
+    width:6px; height:6px;
+    margin-top:-3px;
+    border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 10px var(--teal);
+    opacity:0;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .chain-pulse{animation:travel 7s ease-in-out infinite;}
+  }
+  @keyframes travel{
+    0%{left:40px; opacity:0;}
+    8%{opacity:1;}
+    92%{opacity:1;}
+    100%{left:calc(100% - 46px); opacity:0;}
+  }
+  @media (max-width:760px){
+    .chain{flex-wrap:wrap; justify-content:flex-start;}
+    .chain::before, .chain-pulse{display:none;}
+  }
+
+  .platform-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;}
+  .platform-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px 24px 26px;
+    position:relative;
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .platform-card::after{
+    content:'';
+    position:absolute; left:24px; right:24px; top:0;
+    height:2px; border-radius:0 0 2px 2px;
+    background:var(--c, var(--violet));
+    opacity:0.8;
+  }
+  .platform-card:hover{background:var(--panel-hover); border-color:var(--line-strong);}
+  .platform-top{display:flex; align-items:center; gap:12px; margin-bottom:8px;}
+  .platform-mono{
+    min-width:40px; height:40px;
+    padding:0 8px;
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono);
+    font-size:0.74rem;
+    font-weight:500;
+    color:var(--c, var(--violet));
+    background:color-mix(in srgb, var(--c, var(--violet)) 14%, transparent);
+    border:1px solid color-mix(in srgb, var(--c, var(--violet)) 30%, transparent);
+  }
+  .platform-card h3{font-family:var(--display); font-size:1.12rem; font-weight:700;}
+  .platform-card .platform-desc{color:var(--mute); font-size:0.88rem; margin-bottom:14px;}
+  .platform-card ul{list-style:none; display:flex; flex-wrap:wrap; gap:6px;}
+  .platform-card li{
+    font-size:0.8rem;
+    padding:4px 10px;
+    border-radius:6px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+  @media (max-width:900px){ .platform-grid{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:560px){ .platform-grid{grid-template-columns:1fr;} }
+
+  /* sample workflows */
+  .samples{margin-top:72px;}
+  .samples-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:20px; flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .samples-head h3{font-family:var(--display); font-size:1.5rem; font-weight:700;}
+  .sample-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:0.7rem; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--gold);
+    border:1px dashed rgba(255,200,87,0.45);
+    padding:4px 10px; border-radius:999px;
+  }
+  .samples-note{
+    color:var(--mute);
+    font-size:0.92rem;
+    max-width:720px;
+    margin-bottom:26px;
+  }
+  .sample{
+    border:1px dashed var(--line-strong);
+    border-radius:16px;
+    padding:26px 28px;
+    margin-bottom:14px;
+    background:linear-gradient(180deg, rgba(26,30,61,0.7), rgba(26,30,61,0.35));
+  }
+  .sample-top{display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:16px;}
+  .sample h4{font-family:var(--display); font-size:1.15rem; font-weight:700;}
+  .sample-idx{font-family:var(--mono); font-size:0.74rem; color:var(--mute);}
+  .flow{
+    list-style:none;
+    display:flex; flex-wrap:wrap; align-items:center;
+    gap:8px 0;
+    margin-bottom:16px;
+  }
+  .flow li{
+    font-family:var(--mono);
+    font-size:0.76rem;
+    padding:6px 11px;
+    border-radius:7px;
+    background:var(--bg-2);
+    border:1px solid var(--line-strong);
+    white-space:nowrap;
+  }
+  .flow li:first-child{border-color:rgba(139,107,255,0.5); color:#C7B8FF;}
+  .flow li:last-child{border-color:rgba(56,217,201,0.5); color:#8FEEE3;}
+  .flow li + li{margin-left:26px; position:relative;}
+  .flow li + li::before{
+    content:'→';
+    position:absolute; left:-19px; top:50%;
+    transform:translateY(-50%);
+    color:var(--mute);
+    font-size:0.8rem;
+  }
+  .sample p{color:var(--mute); font-size:0.95rem; max-width:760px;}
+  .sample .uses{margin-top:12px; font-family:var(--mono); font-size:0.74rem; color:var(--mute);}
+  .sample .uses b{color:var(--ink); font-weight:500;}
+
   /* ---------- BUILD LOG ---------- */
   .log{position:relative; padding-left:32px;}
   .log::before{
@@ -388,6 +634,29 @@
   @media (prefers-reduced-motion:no-preference){ .work-card:hover{transform:translateY(-2px);} }
   .work-card .domain{font-family:var(--mono); font-size:0.86rem; font-weight:500;}
   .work-card .region{font-size:0.76rem; color:var(--mute);}
+  .work-sample{border-style:dashed; border-color:rgba(255,200,87,0.35);}
+  .work-sample .region{color:var(--gold);}
+  .work-sample:hover{border-color:var(--gold);}
+  .work-card.is-hidden{display:none;}
+  .filters{display:flex; flex-wrap:wrap; gap:8px; margin:-20px 0 22px;}
+  .filter{
+    font-family:var(--body);
+    font-size:0.84rem;
+    font-weight:500;
+    color:var(--mute);
+    background:transparent;
+    border:1px solid var(--line-strong);
+    border-radius:999px;
+    padding:7px 14px;
+    cursor:pointer;
+    transition:border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .filter:hover{color:var(--ink); border-color:var(--violet);}
+  .filter:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+  .filter.is-active{color:var(--ink); background:var(--violet-soft); border-color:var(--violet);}
+  .filter .count{font-family:var(--mono); font-size:0.72rem; color:var(--mute); margin-left:4px;}
+  .filter-note{margin-top:18px; color:var(--mute); font-size:0.88rem;}
+  .filter-note a{color:var(--ink); text-decoration:underline; text-underline-offset:3px;}
   @media (max-width:760px){ .work-grid{grid-template-columns:repeat(2, 1fr);} }
   @media (max-width:480px){ .work-grid{grid-template-columns:1fr;} }
 
@@ -483,9 +752,10 @@
     <nav class="links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#automation">Automation</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
-      <a href="#stack">Stack</a>
+      <a href="#stack">Skills</a>
     </nav>
     <div class="nav-right">
       <span class="status-pill"><span class="status-dot"></span>Open for projects</span>
@@ -498,20 +768,24 @@
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
   <div class="wrap">
-    <span class="eyebrow">Web Developer · WordPress &amp; AI Automation</span>
+    <span class="eyebrow">Web Development · Automation &amp; Integrations</span>
     <h1 class="name">Jigo Villanueva</h1>
-    <p class="hero-sub">I turn designs into fast, reliable <strong>WordPress builds</strong>, then layer in the <strong>AI automation and funnels</strong> that keep them converting — for agencies and business owners across the Philippines, the US, Australia, and Singapore.</p>
+    <p class="hero-role">Web Developer <span class="amp">&amp;</span> AI Automation Specialist</p>
+    <p class="hero-sub">I build <strong>websites</strong>, <strong>business automations</strong>, and <strong>custom integrations</strong> that connect the tools businesses use every day.</p>
+    <p class="hero-tools">
+      <span class="lead-in">12+ years of web development</span><span>WordPress</span><span>WooCommerce</span><span>GoHighLevel</span><span>Make</span><span>Zapier</span><span>n8n</span><span>APIs &amp; Webhooks</span>
+    </p>
 
     <div class="stat-strip">
-      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">YEARS SHIPPING</div></div>
+      <div class="stat"><div class="stat-num">12+</div><div class="stat-label">YEARS IN WEB DEVELOPMENT</div></div>
       <div class="stat"><div class="stat-num">4</div><div class="stat-label">COUNTRIES SERVED</div></div>
       <div class="stat"><div class="stat-num">6</div><div class="stat-label">AGENCY PARTNERS</div></div>
       <div class="stat"><div class="stat-num">20+</div><div class="stat-label">LIVE PROJECT SITES</div></div>
     </div>
 
     <div class="hero-ctas">
-      <a href="mailto:jigomv@gmail.com" class="btn btn-primary">Email Jigo</a>
-      <a href="#work" class="btn btn-ghost">See the work</a>
+      <a href="#work" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-ghost">Let's Work Together</a>
     </div>
   </div>
 </section>
@@ -520,10 +794,11 @@
   <div class="wrap about-grid">
     <div>
       <span class="section-num num-violet">01 / About</span>
-      <h2 class="section-title" style="margin:16px 0 26px;">Ten years of turning designs into sites that stay online.</h2>
-      <p>Based in Bulacan, Philippines, I've spent the last decade converting Photoshop and XD files into <strong>responsive WordPress builds</strong> — the kind that survive traffic spikes, plugin updates, and the client's next redesign.</p>
-      <p>Most of my work comes from long-term relationships with web agencies in the US, Australia, and Singapore, which means I'm used to picking up a client's existing codebase, house style, and workflow quickly — not just building from a blank canvas.</p>
-      <p>That work now extends past the build itself: setting up <strong>Go High Level, ClickFunnels, and AI-assisted automation</strong> so a site doesn't just look right — it captures leads, follows up, and keeps working long after the visitor is gone.</p>
+      <h2 class="section-title" style="margin:16px 0 26px;">A developer first — who also connects the tools behind the website.</h2>
+      <p>I'm a web developer with <strong>12+ years of experience</strong> building and maintaining websites, e-commerce stores, and web applications for businesses and agencies.</p>
+      <p>My core background is <strong>WordPress, PHP, JavaScript, WooCommerce</strong>, and custom development. I also build and troubleshoot business automations using <strong>GoHighLevel, Make, Zapier, n8n, APIs, and webhooks</strong>.</p>
+      <p>That development background lets me take on automation work that goes past a standard no-code setup: custom API connections, webhooks, cleaning up and mapping data, and figuring out why a workflow stopped running.</p>
+      <p>I'm based in Bulacan, Philippines, and most of my work comes from long-term relationships with agencies in the US, Australia, and Singapore — so I'm used to picking up an existing codebase, house style, and workflow quickly.</p>
     </div>
     <div class="locations">
       <h3>Agency Partners</h3>
@@ -567,16 +842,124 @@
         <div class="service-icon icon-coral">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>
         </div>
-        <h3>AI Automation &amp; Workflows</h3>
-        <p>AI-assisted chat, lead qualification, and follow-up workflows layered on top of the site — so it keeps working long after the visitor leaves.</p>
+        <h3>Business Automation &amp; Integrations</h3>
+        <p>Connecting forms, CRMs, and everyday apps with Make, Zapier, n8n, APIs, and webhooks — with custom code when a standard connector isn't enough.</p>
       </div>
       <div class="service-card">
         <div class="service-icon icon-violet">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3>Funnel &amp; CRM Setup</h3>
-        <p>ClickFunnels and Go High Level configured end-to-end — landing pages, pipelines, and follow-up sequences, ready to hand off.</p>
+        <h3>GoHighLevel, Funnels &amp; CRM</h3>
+        <p>GoHighLevel and ClickFunnels set up end-to-end — funnels, forms, pipelines, tags, and follow-up workflows, ready to hand off.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="automation">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-num num-teal">03 / Automation</span>
+        <h2 class="section-title" style="margin-top:16px;">Automation &amp; Integrations</h2>
+        <p class="auto-sub">Connect your tools. Automate repetitive work. Build better workflows.</p>
+      </div>
+    </div>
+
+    <div class="auto-intro">
+      <div>
+        <p>Most businesses run on a handful of tools that don't talk to each other: a website form, a CRM, email, a spreadsheet, a calendar, a payment platform. Someone ends up copying data between them by hand.</p>
+        <p>I help businesses <strong>automate those repetitive steps and connect their platforms</strong>, so leads, contacts, and orders move where they need to go on their own. I also troubleshoot automations that have quietly stopped working.</p>
+        <p>Because I come from development, I'm comfortable when a workflow needs <strong>a custom API call, a webhook endpoint, or data that has to be cleaned up</strong> before the next step can use it.</p>
+      </div>
+      <div class="auto-aside">
+        <h3>Typical requests</h3>
+        <ul>
+          <li>Send website form leads into a CRM with the right tags</li>
+          <li>Start follow-up emails or SMS when a contact enters a pipeline stage</li>
+          <li>Notify the team in email or chat when something needs attention</li>
+          <li>Sync records between two platforms that have no built-in integration</li>
+          <li>Fix a Zap, scenario, or workflow that is failing or skipping data</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chain" aria-label="Tools I work with: GoHighLevel, Make, Zapier, n8n, APIs, Webhooks">
+      <span class="chain-pulse" aria-hidden="true"></span>
+      <span class="chain-node" style="--c:var(--violet)">GoHighLevel</span>
+      <span class="chain-node" style="--c:var(--coral)">Make</span>
+      <span class="chain-node" style="--c:var(--gold)">Zapier</span>
+      <span class="chain-node" style="--c:var(--coral)">n8n</span>
+      <span class="chain-node" style="--c:var(--teal)">APIs</span>
+      <span class="chain-node" style="--c:var(--teal)">Webhooks</span>
+    </div>
+
+    <div class="platform-grid">
+      <article class="platform-card" style="--c:var(--violet)">
+        <div class="platform-top"><span class="platform-mono">GHL</span><h3>GoHighLevel</h3></div>
+        <p class="platform-desc">CRM, funnels, and follow-up set up so leads don't slip through.</p>
+        <ul><li>Workflows</li><li>Funnels</li><li>Forms</li><li>Pipelines</li><li>Tags</li><li>Follow-up automation</li><li>CRM automation</li></ul>
+      </article>
+      <article class="platform-card" style="--c:var(--coral)">
+        <div class="platform-top"><span class="platform-mono">MK</span><h3>Make.com</h3></div>
+        <p class="platform-desc">Multi-step scenarios for work that needs routing, filters, and data handling.</p>
+        <ul><li>Multi-step workflows</li><li>Data processing</li><li>CRM integrations</li><li>Notifications</li><li>Lead automation</li><li>API connections</li></ul>
+      </article>
+      <article class="platform-card" style="--c:var(--gold)">
+        <div class="platform-top"><span class="platform-mono">ZP</span><h3>Zapier</h3></div>
+        <p class="platform-desc">Quick, reliable connections between the apps a team already uses.</p>
+        <ul><li>Lead automation</li><li>App integrations</li><li>Notifications</li><li>Data synchronization</li><li>Trigger/action workflows</li></ul>
+      </article>
+      <article class="platform-card" style="--c:var(--coral)">
+        <div class="platform-top"><span class="platform-mono">n8n</span><h3>n8n</h3></div>
+        <p class="platform-desc">Flexible workflows with room for custom logic and code steps.</p>
+        <ul><li>Workflow automation</li><li>API integrations</li><li>Webhooks</li><li>Data transformation</li><li>Custom logic</li><li>AI-powered workflows</li></ul>
+      </article>
+      <article class="platform-card" style="--c:var(--teal)">
+        <div class="platform-top"><span class="platform-mono">API</span><h3>APIs &amp; Webhooks</h3></div>
+        <p class="platform-desc">Direct connections when there's no ready-made integration.</p>
+        <ul><li>REST APIs</li><li>Webhook integrations</li><li>Custom endpoints</li><li>Data transfer</li><li>Third-party integrations</li><li>Custom automation logic</li></ul>
+      </article>
+      <article class="platform-card" style="--c:var(--violet)">
+        <div class="platform-top"><span class="platform-mono">&lt;/&gt;</span><h3>Custom Development</h3></div>
+        <p class="platform-desc">Where the web development background comes in, for steps no-code tools can't handle.</p>
+        <ul><li>PHP &amp; JavaScript</li><li>WordPress hooks</li><li>WooCommerce data</li><li>Custom plugins</li><li>Field mapping</li><li>Debugging</li></ul>
+      </article>
+    </div>
+
+    <div class="samples" id="automation-projects">
+      <div class="samples-head">
+        <h3>Automation Projects</h3>
+        <span class="sample-badge">Sample workflows</span>
+      </div>
+      <p class="samples-note">These are example workflows that show the kind of automation I set up and troubleshoot. They illustrate the approach — they are not write-ups of specific client projects. My client website work is listed separately under <a href="#work" style="color:var(--ink); text-decoration:underline; text-underline-offset:3px;">Selected Work</a>.</p>
+
+      <article class="sample">
+        <div class="sample-top"><h4>Lead Capture &amp; CRM Automation</h4><span class="sample-idx">Sample 01</span></div>
+        <ol class="flow" aria-label="Workflow steps">
+          <li>Website form</li><li>Make / Zapier</li><li>GoHighLevel</li><li>Contact created</li><li>Tags applied</li><li>Follow-up workflow</li><li>Team notified</li>
+        </ol>
+        <p>Captures new website leads, sends them to GoHighLevel, applies the correct tags, starts the follow-up sequence, and notifies the team — so nobody has to copy lead details by hand and every lead gets a response.</p>
+        <p class="uses"><b>Tools:</b> WordPress form · Make or Zapier · GoHighLevel workflows</p>
+      </article>
+
+      <article class="sample">
+        <div class="sample-top"><h4>API &amp; Webhook Integration</h4><span class="sample-idx">Sample 02</span></div>
+        <ol class="flow" aria-label="Workflow steps">
+          <li>Website / Platform</li><li>Webhook</li><li>Automation</li><li>API</li><li>CRM / Database</li>
+        </ol>
+        <p>Connects different systems using APIs and webhooks so data moves automatically between platforms — including mapping fields between the two systems, handling failed requests, and keeping a record of what was sent.</p>
+        <p class="uses"><b>Tools:</b> Webhooks · REST APIs · Make or n8n · custom PHP where needed</p>
+      </article>
+
+      <article class="sample">
+        <div class="sample-top"><h4>n8n Business Automation</h4><span class="sample-idx">Sample 03</span></div>
+        <ol class="flow" aria-label="Workflow steps">
+          <li>Trigger</li><li>Data processing</li><li>API</li><li>CRM</li><li>Notification</li>
+        </ol>
+        <p>A workflow in n8n that processes incoming information, connects to external services, and triggers the next actions automatically, with custom logic in code steps where a standard node isn't enough.</p>
+        <p class="uses"><b>Tools:</b> n8n · HTTP requests · JavaScript code nodes</p>
+      </article>
     </div>
   </div>
 </section>
@@ -585,20 +968,21 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="section-num num-teal">03 / Experience</span>
+        <span class="section-num num-teal">04 / Experience</span>
         <h2 class="section-title" style="margin-top:16px;">Build log</h2>
       </div>
       <p class="section-note">2012 to present, in the order it happened.</p>
     </div>
     <div class="log">
       <div class="log-entry">
-        <span class="log-tag">2021 — 2026</span>
+        <span class="log-tag">2021 — PRESENT</span>
         <div class="log-role">Freelance Web Developer</div>
         <div class="log-clients">Lionheads · Averps · Twlv20 · SonicDlimo · Long Island Web Design · Studio1 Design</div>
         <ul>
           <li>Converted sliced Photoshop and Adobe XD files into responsive WordPress sites using Elementor</li>
           <li>Built and launched WooCommerce stores, and migrated existing sites onto WordPress with minimal downtime</li>
-          <li>Set up ClickFunnels and Go High Level for client marketing and sales funnels</li>
+          <li>Set up ClickFunnels and GoHighLevel for client marketing and sales funnels</li>
+          <li>Built and troubleshot business automations in GoHighLevel, Make, Zapier, and n8n, including webhook and API connections between client tools</li>
         </ul>
       </div>
       <div class="log-entry">
@@ -635,32 +1019,44 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="section-num num-violet">04 / Selected Work</span>
+        <span class="section-num num-violet">05 / Selected Work</span>
         <h2 class="section-title" style="margin-top:16px;">Sites I've built or shipped features for</h2>
       </div>
-      <p class="section-note">A sample from ten years of client and agency projects.</p>
+      <p class="section-note">A sample from 12+ years of client and agency projects, plus example automation workflows.</p>
     </div>
+    <div class="filters" role="group" aria-label="Filter work">
+      <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <span class="count"></span></button>
+      <button type="button" class="filter" data-filter="web" aria-pressed="false">Web Development <span class="count"></span></button>
+      <button type="button" class="filter" data-filter="wordpress" aria-pressed="false">WordPress <span class="count"></span></button>
+      <button type="button" class="filter" data-filter="woocommerce" aria-pressed="false">WooCommerce <span class="count"></span></button>
+      <button type="button" class="filter" data-filter="automation" aria-pressed="false">Automation <span class="count"></span></button>
+    </div>
+    <!-- To tag a site: data-cat accepts any of "web wordpress woocommerce". Filters with no items are hidden automatically. -->
     <div class="work-grid">
-      <div class="work-card"><span class="domain">joonsolutions.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">midnightmusic.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">goempiremovers.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">remny.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">thirdparagraph.com.sg</span><span class="region">Singapore</span></div>
-      <div class="work-card"><span class="domain">cesstech.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">navegar.com.ph</span><span class="region">Philippines</span></div>
-      <div class="work-card"><span class="domain">thoughtsbox.com.sg</span><span class="region">Singapore</span></div>
-      <div class="work-card"><span class="domain">aaeh.com.au</span><span class="region">Australia</span></div>
-      <div class="work-card"><span class="domain">sonicdlimo.com</span><span class="region">USA</span></div>
-      <div class="work-card"><span class="domain">sylaba.com.au</span><span class="region">Australia</span></div>
-      <div class="work-card"><span class="domain">mrmclub.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">kenko.com.sg</span><span class="region">Singapore</span></div>
-      <div class="work-card"><span class="domain">jmsrogers.com</span><span class="region">Agency project</span></div>
-      <div class="work-card"><span class="domain">samsonite.com.ph</span><span class="region">Philippines</span></div>
-      <div class="work-card"><span class="domain">mosscape.com.sg</span><span class="region">Singapore</span></div>
-      <div class="work-card"><span class="domain">nivea.ph</span><span class="region">Philippines</span></div>
-      <div class="work-card"><span class="domain">niveamen.ph</span><span class="region">Philippines</span></div>
-      <div class="work-card"><span class="domain">cln.com.ph</span><span class="region">Philippines</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">joonsolutions.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">midnightmusic.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">goempiremovers.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">remny.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">thirdparagraph.com.sg</span><span class="region">Singapore</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">cesstech.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">navegar.com.ph</span><span class="region">Philippines</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">thoughtsbox.com.sg</span><span class="region">Singapore</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">aaeh.com.au</span><span class="region">Australia</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">sonicdlimo.com</span><span class="region">USA</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">sylaba.com.au</span><span class="region">Australia</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">mrmclub.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">kenko.com.sg</span><span class="region">Singapore</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">jmsrogers.com</span><span class="region">Agency project</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">samsonite.com.ph</span><span class="region">Philippines</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">mosscape.com.sg</span><span class="region">Singapore</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">nivea.ph</span><span class="region">Philippines</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">niveamen.ph</span><span class="region">Philippines</span></div>
+      <div class="work-card" data-cat="web wordpress"><span class="domain">cln.com.ph</span><span class="region">Philippines</span></div>
+      <a href="#automation-projects" class="work-card work-sample" data-cat="automation"><span class="domain">Lead capture → GoHighLevel</span><span class="region">Sample workflow · Make / Zapier</span></a>
+      <a href="#automation-projects" class="work-card work-sample" data-cat="automation"><span class="domain">API &amp; webhook integration</span><span class="region">Sample workflow · APIs / Webhooks</span></a>
+      <a href="#automation-projects" class="work-card work-sample" data-cat="automation"><span class="domain">n8n business automation</span><span class="region">Sample workflow · n8n</span></a>
     </div>
+    <p class="filter-note" hidden>Automation items are sample workflows that show how I approach this kind of work — not client case studies. <a href="#automation-projects">See the full breakdown</a>.</p>
   </div>
 </section>
 
@@ -668,45 +1064,34 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="section-num num-coral">05 / Stack</span>
+        <span class="section-num num-coral">06 / Skills</span>
         <h2 class="section-title" style="margin-top:16px;">Tools I build with</h2>
       </div>
+      <p class="section-note">Development is the foundation; automation is built on top of it.</p>
     </div>
     <div class="stack-groups">
       <div class="stack-group">
-        <h3>Languages</h3>
+        <h3>Web Development</h3>
         <div class="chip-row">
-          <span class="chip chip-violet">PHP</span><span class="chip chip-violet">HTML5</span><span class="chip chip-violet">CSS3</span><span class="chip chip-violet">JavaScript / jQuery</span><span class="chip chip-violet">Objective-C (basic)</span>
+          <span class="chip chip-violet">WordPress</span><span class="chip chip-violet">Elementor</span><span class="chip chip-violet">WooCommerce</span><span class="chip chip-violet">PHP</span><span class="chip chip-violet">JavaScript</span><span class="chip chip-violet">HTML5</span><span class="chip chip-violet">CSS3</span><span class="chip chip-violet">Custom Themes</span><span class="chip chip-violet">Custom Plugins</span><span class="chip chip-violet">APIs</span>
         </div>
       </div>
       <div class="stack-group">
-        <h3>Frameworks &amp; CMS</h3>
+        <h3>Automation</h3>
         <div class="chip-row">
-          <span class="chip chip-teal">WordPress</span><span class="chip chip-teal">Elementor</span><span class="chip chip-teal">WooCommerce</span><span class="chip chip-teal">Joomla</span>
+          <span class="chip chip-teal">GoHighLevel</span><span class="chip chip-teal">Make.com</span><span class="chip chip-teal">Zapier</span><span class="chip chip-teal">n8n</span><span class="chip chip-teal">Webhooks</span><span class="chip chip-teal">REST APIs</span><span class="chip chip-teal">CRM Automation</span><span class="chip chip-teal">Workflow Automation</span><span class="chip chip-teal">Lead Automation</span><span class="chip chip-teal">Custom Integrations</span>
         </div>
       </div>
       <div class="stack-group">
-        <h3>Front-end</h3>
+        <h3>Hosting, Analytics &amp; SEO</h3>
         <div class="chip-row">
-          <span class="chip chip-plain">Bootstrap</span><span class="chip chip-plain">Responsive / media queries</span><span class="chip chip-plain">PSD → HTML</span><span class="chip chip-plain">XD → WordPress</span>
+          <span class="chip chip-coral">Cloudflare</span><span class="chip chip-coral">cPanel</span><span class="chip chip-coral">Website Migration</span><span class="chip chip-coral">DNS &amp; SSL</span><span class="chip chip-coral">Google Analytics</span><span class="chip chip-coral">Google Tag Manager</span><span class="chip chip-coral">SEO</span><span class="chip chip-coral">Page Speed Optimization</span>
         </div>
       </div>
       <div class="stack-group">
-        <h3>AI &amp; Automation</h3>
+        <h3>Also worked with</h3>
         <div class="chip-row">
-          <span class="chip chip-coral">AI Workflow Automation</span><span class="chip chip-coral">ClickFunnels</span><span class="chip chip-coral">Go High Level</span><span class="chip chip-coral">REST API integration</span><span class="chip chip-coral">Facebook App dev</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <h3>Tools</h3>
-        <div class="chip-row">
-          <span class="chip chip-plain">Photoshop</span><span class="chip chip-plain">Sublime Text</span><span class="chip chip-plain">XAMPP</span><span class="chip chip-plain">Xcode</span><span class="chip chip-plain">Balsamiq</span><span class="chip chip-plain">Lucidchart</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <h3>Data &amp; Reporting</h3>
-        <div class="chip-row">
-          <span class="chip chip-plain">MySQL</span><span class="chip chip-plain">Google Analytics</span><span class="chip chip-plain">Basic networking (Cisco/Boson)</span>
+          <span class="chip chip-plain">MySQL</span><span class="chip chip-plain">jQuery</span><span class="chip chip-plain">Bootstrap</span><span class="chip chip-plain">Joomla</span><span class="chip chip-plain">ClickFunnels</span><span class="chip chip-plain">Photoshop</span><span class="chip chip-plain">Adobe XD</span><span class="chip chip-plain">Balsamiq</span><span class="chip chip-plain">Lucidchart</span><span class="chip chip-plain">Objective-C (basic)</span>
         </div>
       </div>
     </div>
@@ -716,7 +1101,7 @@
 <section id="background">
   <div class="wrap split">
     <div>
-      <span class="section-num num-teal">06 / Education</span>
+      <span class="section-num num-teal">07 / Education</span>
       <h2 class="section-title" style="margin:16px 0 26px;">Education &amp; certifications</h2>
       <div class="edu-item">
         <div class="edu-title">BS in Information Technology</div>
@@ -732,7 +1117,7 @@
       </div>
     </div>
     <div>
-      <span class="section-num num-violet">07 / References</span>
+      <span class="section-num num-violet">08 / References</span>
       <h2 class="section-title" style="margin:16px 0 26px;">Who's vouched for the work</h2>
       <div class="ref-card">
         <div class="ref-name">Simone Blum</div>
@@ -755,8 +1140,9 @@
   <div class="wrap">
     <div class="contact-panel">
       <div>
-        <h2>Have a WordPress build or a funnel that needs fixing?</h2>
-        <p>Open to remote opportunities, long-term agency partnerships, freelance projects, and contract engagements across any time zone.</p>
+        <h2>Need a website, an automation, or both working together?</h2>
+        <p>Open to remote roles, freelance projects, long-term agency partnerships, and contract work across time zones. Tell me what you're building, or what isn't working, and I'll reply with how I'd approach it.</p>
+        <a href="mailto:jigomv@gmail.com" class="btn btn-primary" style="margin-top:24px; position:relative;">Let's Work Together</a>
       </div>
       <div class="contact-list">
         <a href="mailto:jigomv@gmail.com"><span>EMAIL</span><span>jigomv@gmail.com</span></a>
@@ -764,9 +1150,40 @@
         <a href="#about"><span>LOCATION</span><span>Hagonoy, Bulacan, PH</span></a>
       </div>
     </div>
-    <p class="footnote">Jigo M. Villanueva — Web Developer</p>
+    <p class="footnote">Jigo M. Villanueva — Web Developer &amp; AI Automation Specialist</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.filters .filter');
+  var cards = document.querySelectorAll('.work-grid .work-card');
+  var note = document.querySelector('.filter-note');
+  function matches(card, f){
+    return f === 'all' || (' ' + (card.getAttribute('data-cat') || '') + ' ').indexOf(' ' + f + ' ') !== -1;
+  }
+  // Count items per filter; hide filters that have nothing to show yet.
+  buttons.forEach(function(btn){
+    var f = btn.getAttribute('data-filter');
+    var n = 0;
+    cards.forEach(function(c){ if (matches(c, f)) n++; });
+    btn.querySelector('.count').textContent = n;
+    if (n === 0) btn.hidden = true;
+  });
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function(b){
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      cards.forEach(function(c){ c.classList.toggle('is-hidden', !matches(c, f)); });
+      if (note) note.hidden = (f !== 'automation');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
